@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  scylla-node1:
+    image: scylladb/scylla:4.5.0
+    container_name: scylla-node1
+    ports:
+      - "9042:9042"
+    environment:
+      - SCYLLA_SEEDS=node1
+    command: --smp 1 --memory=750M --overprovisioned 1
